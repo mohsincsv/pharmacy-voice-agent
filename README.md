@@ -1,8 +1,8 @@
 # Pharmacy Voice Agent
 
-A small Flask service that receives phone-call data from Retell AI, stores the caller’s details in a JSON file, and prints a notification so pharmacy staff know a patient called.
+A voice agent service that receives phone-call from patients vai Retell AI, stores the caller’s details in a JSON file, and prints a notification so pharmacy staff know a patient called.
 
-The agent lives entirely on your machine (or a small cloud server). Retell handles the phone call; this service just saves the data.
+The agent lives entirely on your machine (or a small cloud server).
 
 ---
 
@@ -16,38 +16,6 @@ The agent lives entirely on your machine (or a small cloud server). Retell handl
    - appends the record to `data.json`
    - writes a summary line to `notifications.txt`
    - prints the same summary to the console
-
-The JSON file is the only storage; no external database is required for the MVP.
-
----
-
-## Requirements
-
-* Python 3.9+  
-* pip  
-* A Retell AI account (for the phone number)  
-* [ngrok](https://ngrok.com) or any tunnel if you test locally and need an HTTPS URL
-
----
-
-## Setup
-
-```bash
-# clone the repo
-git clone https://github.com/<your-account>/pharmacy-voice-agent.git
-cd pharmacy-voice-agent
-
-# create virtual environment
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-
-# install dependencies
-pip install -r requirements.txt
-
-# copy env template
-cp .env.example .env
-# edit .env and add your RETELL_API_KEY
-```
 
 ---
 
